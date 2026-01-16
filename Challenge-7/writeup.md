@@ -9,12 +9,12 @@ The only evidence available is the network capture file. So I started by studyin
 
 On further analysis of the file, I found out the following:
 
-1)The username and password used by the attacker to login (username=isitadmin&password=iamtheadmin). 
+1) The username and password used by the attacker to login (username=isitadmin&password=iamtheadmin). 
 
-2)The login was successful and the attacker was directed to the welcome page (HTTP/1.1 302 FOUND
+2) The login was successful and the attacker was directed to the welcome page (HTTP/1.1 302 FOUND
   Location: /welcome?user=isitadmin) 302 means redirect to a page.
   
-3)After the login, the client sent a GET request to the welcome page and included the username ((GET /welcome?user=isitadmin HTTP/1.1). The server trusted this parameter(HTTP/1.1 200 OK), which resulted in the flag being displayed (FLAG{analyzing_is_imp}).
+3) After the login, the client sent a GET request to the welcome page and included the username ((GET /welcome?user=isitadmin HTTP/1.1). The server trusted this parameter(HTTP/1.1 200 OK), which resulted in the flag being displayed (FLAG{analyzing_is_imp}).
 
 This is how I analyzed the network traffic, uncover the stolen credentials (username and password) and retrieved the hidden flag.
 
